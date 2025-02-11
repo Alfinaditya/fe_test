@@ -1,50 +1,77 @@
-# React + TypeScript + Vite
+# fe_test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application built with React, Vite, TypeScript, and Material UI.
 
-Currently, two official plugins are available:
+## 📦 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**: React + Vite
+- **Language**: TypeScript
+- **State Management**: Redux
+- **UI Components**: Material UI
+- **Form Handling**: React Hook Form + Zod
+- **Cypress for testing**
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+Make sure you have **Node.js v18.18.2** installed. You can check your version with:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+node -v
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Installation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Clone the repository:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+   ```
+   git clone <repository-url>
+   cd fe_test
+   ```
+
+2. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+### Development
+
+To start the development server:
+
+```
+npm run dev
+```
+
+### Build
+
+To create a production build:
+
+```
+npm run build
+```
+
+### Lint
+
+To check for linting issues:
+
+```
+npm run lint
+```
+
+### Cypress Tests
+
+To run Cypress in interactive mode:
+
+```
+npm run cypresss:open
+```
+
+### Preview
+
+To preview the production build:
+
+```
+npm run preview
 ```
