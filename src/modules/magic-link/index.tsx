@@ -12,7 +12,7 @@ import {
 import Cookies from 'js-cookie';
 
 const MagicLinkPage = () => {
-	let { id } = useParams();
+	const { id } = useParams();
 	const navigate = useNavigate();
 	const [messageConfig, setMessageConfig] = useState<{
 		isShow: boolean;
