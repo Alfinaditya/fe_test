@@ -5,6 +5,7 @@ import { ModalProps } from '../../../types/modal';
 import { z } from 'zod';
 import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { toRupiahFormat } from '../../../lib/utils';
 
 const CalcCogsSchema = z.object({
 	cups: z.coerce
@@ -76,6 +77,7 @@ const CalculateCogsModal: React.FC<ModalProps> = ({ open, handleClose }) => {
 			onClose={handleClose}
 			maxWidth="xs"
 			fullWidth
+			data-testid="calculate-cogs-modal"
 			aria-labelledby="alert-dialog-title"
 			aria-describedby="alert-dialog-description"
 		>
@@ -122,12 +124,9 @@ const CalculateCogsModal: React.FC<ModalProps> = ({ open, handleClose }) => {
 								label="Total COGS"
 								variant="outlined"
 								disabled={true}
+								name="totalCogs"
 								onChange={() => {}}
-								value={new Intl.NumberFormat('id-ID', {
-									style: 'currency',
-									currency: 'IDR',
-									minimumFractionDigits: 0,
-								}).format(totalCost)}
+								value={toRupiahFormat(totalCost)}
 							/>
 						</FormControl>
 					</Box>

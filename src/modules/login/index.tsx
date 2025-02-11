@@ -43,6 +43,8 @@ const LoginPage = () => {
 
 	const onSubmit = () => {
 		const host = window.location.protocol + '//' + window.location.host;
+		setMagicLink('');
+		form.reset();
 		setMagicLink(`${host}/magic-link/${crypto.randomUUID()}`);
 	};
 	return (

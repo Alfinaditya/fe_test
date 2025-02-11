@@ -26,6 +26,7 @@ import EditInventoryModal from './components/edit-modal';
 import DeleteInventoryModal from './components/delete-modal';
 import CalculateCogsModal from './components/calculate-cogs';
 import { useNavigate } from 'react-router-dom';
+import { toRupiahFormat } from '../../lib/utils';
 
 const CogsPage = () => {
 	const dispatch = useDispatch();
@@ -62,12 +63,7 @@ const CogsPage = () => {
 		{
 			field: 'priceQty',
 			headerName: 'Price per Quantity',
-			renderCell: (params) =>
-				new Intl.NumberFormat('id-ID', {
-					style: 'currency',
-					currency: 'IDR',
-					minimumFractionDigits: 0,
-				}).format(params.row.priceQty),
+			renderCell: (params) => toRupiahFormat(params.row.priceQty),
 			flex: 1,
 		},
 
